@@ -4,9 +4,9 @@
 Set up the base infrastructure and directory skeleton.
 
 ## Files to create
-- `shpf/docker-compose.yml` — Postgres 16, Redis OSS, Airflow 2.9+ (webserver + scheduler), Streamlit, Prometheus, Grafana
-- `shpf/README.md` — placeholder
-- Full directory skeleton with `__init__.py` files
+- `docker-compose.yml` — Postgres 16, Redis OSS, Airflow 2.9+ (webserver + scheduler), Streamlit
+- `README.md` — placeholder
+- Full directory skeleton with `__init__.py` files (Prometheus + Grafana are added in Phase 7 per TRD)
 
 ## Directory skeleton
 ```
@@ -54,11 +54,9 @@ shpf/
 | airflow-webserver | apache/airflow:2.9.0 | 8080 |
 | airflow-scheduler | apache/airflow:2.9.0 | - |
 | streamlit | python:3.11-slim (custom) | 8501 |
-| prometheus | prom/prometheus | 9090 |
-| grafana | grafana/grafana | 3000 |
 
 ## Definition of Done
-- `docker compose up` succeeds when run from `shpf/`
+- `docker compose up` succeeds when run from repo root
 - All containers report healthy
 - Directory skeleton exists with all `__init__.py` files
 - Run `pytest` (no tests yet — should pass with zero tests collected)
